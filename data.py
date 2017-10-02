@@ -35,7 +35,7 @@ def create_user(username, password):
         'username': username,
         'password': password,
         'id': id,
-        'posts': []
+        'wall': []
     }
     usernames[username] = id
     return data['users'][id]
