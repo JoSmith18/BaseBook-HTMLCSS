@@ -30,13 +30,4 @@
     }]
 }</pre>
 </div>
-
-<h1> Your wall </h1>
-<hr> {% if user['wall'] %} {% for post in user['wall'] %}
-<div class="panel panel-default">
-    <div class="panel-heading"><a href="/wall/{{ post['author_id'] }}">{{ post['author'] }}</a> ({{ post['timestamp'].diff_for_humans() }})</div>
-    <div class="panel-body">{{ post['message'] }}</div>
-</div>
-{% endfor %} {% else %}
-<h4>No Posts!</h4>
-{% endif %} {% endblock %}
+{% endblock %}
