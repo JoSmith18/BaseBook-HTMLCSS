@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block body %}
+
+<div>
+    <h3>Login Page</h3>
+    <p>This page should present the user with a form that allows them to login.</p>
+    <p>The form should:</p>
+    <ul>
+        <li>send its data to <code>/login</code></li>
+        <li>send its data as a <code>POST</code></li>
+        <li>have a <code>username</code> and <code>password</code> input</li>
+        <li>show an error message if the username and password was incorrect</li>
+    </ul>
+
+    <p>This template will be provided with a <code>form</code> object.</p>
+    <p><code>form</code> has an <code>is_valid</code> method that evaluates to <code>True</code> if the user provided an valid
+        username/password pair</p>
+</div>
+
+
+{% endblock %}

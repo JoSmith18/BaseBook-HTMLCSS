@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block body %}
+<div class="col-lg-3 col-md-4 col-sm-4">
+    <form class="form" action="/account/create" method="POST">
+        <p>Username: <input class="form-control" type="text" name="username" value="{{ form.username }}"></p>
+        {% if form.username_errors %}
+        <ul>
+            {% for error in form.username_errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <p>Password: <input class="form-control" type="password" name="password"></p>
+        {% if form.password_errors %}
+        <ul>
+            {% for error in form.password_errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <p>Password (Again): <input class="form-control" type="password" name="passwordRepeat"></p>
+        {% if form.passwordRepeat_errors %}
+        <ul>
+            {% for error in form.passwordRepeat_errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <p><input class="btn btn-primary" type="submit" value="Create Account"></p>
+    </form>
+</div>
+{% endblock %}

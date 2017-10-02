@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block body %}
+<div class="col-lg-5 col-md-6">
+    <form action="/wall/{{ form.wall_owner['id'] }}/comment" method="POST">
+        <input type="hidden" name="wall_owner_id" value="{{ form.wall_owner['id'] }}">
+        <input type="hidden" name="author_id" value="{{ form.author['id'] }}">
+        <p>Posting to {{ form.wall_owner['username'] }}'s wall </p>
+        <textarea class="form-control" name="message" cols="30" rows="3">{{ form.message }}</textarea>
+        <br>
+        <input type="submit" class="btn btn-primary" value="Go!">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block body %}
+
+
+<div>
+    <h3>My Wall</h3>
+    <p>This page should be very similar to <code>other_wall.html</code></p>
+    <p>The page should have:</p>
+    <ul>
+        <li>A header that says "Your Wall"</li>
+        <li>
+            <p> The posts for this users wall. Each post should</p>
+            <ul>
+                <li>contain a link to the author's wall</li>
+                <li>show the posts message</li>
+            </ul>
+        </li>
+    </ul>
+    <p>To do this, the page will be given a dictionary named <code>user</code> that looks like this:</p>
+    <pre>
+{
+    'username':
+    'natec425',
+    'id':
+    1,
+    'wall': [{
+        'author_id': 2,
+        'author': 'mmclark',
+        'timestamp': pendulum.now(),
+        'message': 'Hey There'
+    }]
+}</pre>
+</div>
+
+<h1> Your wall </h1>
+<hr> {% if user['wall'] %} {% for post in user['wall'] %}
+<div class="panel panel-default">
+    <div class="panel-heading"><a href="/wall/{{ post['author_id'] }}">{{ post['author'] }}</a> ({{ post['timestamp'].diff_for_humans() }})</div>
+    <div class="panel-body">{{ post['message'] }}</div>
+</div>
+{% endfor %} {% else %}
+<h4>No Posts!</h4>
+{% endif %} {% endblock %}

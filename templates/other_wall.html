@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block body %}
+
+
+<div>
+    <h3>Other Wall</h3>
+    <p>This page should show the user the posts from another users wall.</p>
+    <p>The page should have:</p>
+    <ul>
+        <li>A header that tells the user whose page they are on.</li>
+        <li>A link to the the page where they can post a comment (ex. <code>/wall/5/comment</code>)</li>
+        <li>
+            <p> The posts for this users wall. Each post should</p>
+            <ul>
+                <li>contain a link to the author's wall</li>
+                <li>show the posts message</li>
+            </ul>
+        </li>
+    </ul>
+    <p>To do this, the page will be given a dictionary named <code>user</code> that looks like this:</p>
+    <pre>
+{
+    'username':
+    'natec425',
+    'id':
+    1,
+    'wall': [{
+        'author_id': 2,
+        'author': 'mmclark',
+        'timestamp': pendulum.now(),
+        'message': 'Hey There'
+    }]
+}</pre>
+</div>
+{% endblock %}
